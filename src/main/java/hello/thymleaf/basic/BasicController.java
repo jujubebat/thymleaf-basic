@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import javax.print.MultiDoc;
 import javax.servlet.http.HttpSession;
+import javax.swing.plaf.SpinnerUI;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -97,6 +98,12 @@ public class BasicController {
     public String condition(Model model){
         addUsers(model);
         return "basic/condition";
+    }
+
+    @GetMapping("/comments")
+    public String comments(Model model){
+        model.addAttribute("data", "Spring!");
+        return "basic/comments";
     }
 
     private void addUsers(Model model){
